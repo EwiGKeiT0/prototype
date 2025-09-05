@@ -49,7 +49,20 @@
         >
           <div class="feedback-content">
             <p><strong>正确答案：</strong>{{ question.correctAnswer }}</p>
-            <p><strong>解析：</strong>{{ question.explanation }}</p>
+            <div class="explanation-section">
+              <el-button 
+                v-if="!showExplanation" 
+                type="primary" 
+                size="small"
+                @click="getExplanation"
+                :loading="explanationLoading"
+              >
+                获取解析
+              </el-button>
+              <div v-if="showExplanation" class="explanation-content">
+                <p><strong>解析：</strong>{{ explanationText }}</p>
+              </div>
+            </div>
           </div>
         </el-alert>
       </div>
@@ -60,6 +73,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { ElMessage } from 'element-plus';
+import { apiHelper } from '../utils/api-helper';
 
 interface QuestionOption {
   key: string;
@@ -88,6 +102,9 @@ const selectedAnswer = ref('');
 const submitting = ref(false);
 const showFeedback = ref(false);
 const isCorrect = ref(false);
+const showExplanation = ref(false);
+const explanationLoading = ref(false);
+const explanationText = ref('');
 
 const handleAnswerChange = (value: string) => {
   if (showFeedback.value) return;
@@ -102,9 +119,11 @@ const submitAnswer = async () => {
   
   submitting.value = true;
   
-  // 模拟提交延迟
-  setTimeout(() => {
-    isCorrect.value = selectedAnswer.value === props.question.correctAnswer;
+  try {
+    // 调用API提交答案
+    const response = await apiHelper.submitAnswer(props.question, selectedAnswer.value);
+    
+    isCorrect.value = response.isCorrect;
     showFeedback.value = true;
     submitting.value = false;
     
@@ -119,9 +138,31 @@ const submitAnswer = async () => {
     if (isCorrect.value) {
       ElMessage.success('回答正确！');
     } else {
-      ElMessage.error('回答错误，请查看解析');
+      ElMessage.error('回答错误，点击获取解析查看详情');
     }
-  }, 800);
+  } catch (error) {
+    submitting.value = false;
+    ElMessage.error('提交失败，请重试');
+  }
+};
+
+const getExplanation = async () => {
+  explanationLoading.value = true;
+  
+  try {
+    // 调用API获取解析
+    const explanation = await apiHelper.getExplanation(props.question, selectedAnswer.value);
+    explanationText.value = explanation;
+    showExplanation.value = true;
+    explanationLoading.value = false;
+    ElMessage.success('解析获取成功！');
+  } catch (error) {
+    explanationLoading.value = false;
+    ElMessage.error('获取解析失败，请重试');
+    // 降级到使用本地解析
+    explanationText.value = props.question.explanation;
+    showExplanation.value = true;
+  }
 };
 </script>
 
@@ -220,5 +261,22 @@ const submitAnswer = async () => {
   margin: 8px 0;
   line-height: 1.5;
   text-align: left;
+}
+
+.explanation-section {
+  margin-top: 12px;
+}
+
+.explanation-content {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.explanation-content p {
+  margin: 0;
+  color: #2c3e50;
+  line-height: 1.6;
 }
 </style>
