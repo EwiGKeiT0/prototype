@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '../views/LoginView.vue';
 import StudentView from '../views/StudentView.vue';
-import TeacherView from '../views/TeacherView.vue';
 
 const routes = [
   { 
@@ -20,12 +19,6 @@ const routes = [
     component: StudentView,
     meta: { requiresAuth: true, role: 'student' }
   },
-  { 
-    path: '/teacher', 
-    name: 'Teacher',
-    component: TeacherView,
-    meta: { requiresAuth: true, role: 'teacher' }
-  },
 ];
 
 const router = createRouter({
@@ -34,7 +27,7 @@ const router = createRouter({
 });
 
 // 路由守卫
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   // 模拟用户认证状态（实际项目中应从localStorage或Pinia中获取）
   const isAuthenticated = localStorage.getItem('userToken') !== null;
   const userRole = localStorage.getItem('userRole');
@@ -47,8 +40,6 @@ router.beforeEach((to, from, next) => {
       // 角色不匹配，重定向到对应角色页面
       if (userRole === 'student') {
         next('/student');
-      } else if (userRole === 'teacher') {
-        next('/teacher');
       } else {
         next('/login');
       }
@@ -62,8 +53,6 @@ router.beforeEach((to, from, next) => {
       // 已登录用户访问登录页，重定向到对应角色页面
       if (userRole === 'student') {
         next('/student');
-      } else if (userRole === 'teacher') {
-        next('/teacher');
       } else {
         next();
       }

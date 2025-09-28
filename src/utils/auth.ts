@@ -5,7 +5,7 @@ export const auth = {
   // 获取当前用户
   getUser: (): User | null => {
     const token = localStorage.getItem('userToken')
-    const role = localStorage.getItem('userRole') as 'student' | 'teacher'
+    const role = localStorage.getItem('userRole') as 'student'
     const username = localStorage.getItem('username')
     
     return (token && role && username) ? { token, role, username } : null
@@ -29,5 +29,5 @@ export const auth = {
   isLoggedIn: () => !!localStorage.getItem('userToken'),
 
   // 检查用户角色
-  hasRole: (role: 'student' | 'teacher') => localStorage.getItem('userRole') === role
+  hasRole: (role: 'student') => localStorage.getItem('userRole') === role
 }

@@ -34,27 +34,6 @@
             />
           </el-form-item>
           
-          <el-form-item prop="role">
-            <div class="role-buttons">
-              <div 
-                class="role-button" 
-                :class="{ active: loginForm.role === 'student' }"
-                @click="loginForm.role = 'student'"
-              >
-                <el-icon><UserFilled /></el-icon>
-                <span>学生</span>
-              </div>
-              <div 
-                class="role-button" 
-                :class="{ active: loginForm.role === 'teacher' }"
-                @click="loginForm.role = 'teacher'"
-              >
-                <el-icon><Avatar /></el-icon>
-                <span>教师</span>
-              </div>
-            </div>
-          </el-form-item>
-          
           <el-form-item>
             <el-button 
               type="primary" 
@@ -76,7 +55,6 @@
 import { ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import { ElMessage } from 'element-plus';
-import { UserFilled, Avatar } from '@element-plus/icons-vue';
 
 const router = useRouter();
 const loading = ref(false);
@@ -113,12 +91,8 @@ const handleLogin = async () => {
         
         ElMessage.success('登录成功！');
         
-        // 根据角色跳转
-        if (loginForm.role === 'student') {
-          router.push('/student');
-        } else {
-          router.push('/teacher');
-        }
+        // 跳转到学生端
+        router.push('/student');
         
         loading.value = false;
       }, 1000);

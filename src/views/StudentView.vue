@@ -12,17 +12,43 @@
     <el-container class="main-container">
       <!-- 左侧导航栏 -->
       <el-aside width="300px" class="knowledge-aside">
-        <!-- 智能推荐 -->
+        <!-- 智能问答 -->
+        <el-card class="chatbot-card clickable-card" :class="{ active: currentView === 'chatbot' }" shadow="never" @click="currentView = 'chatbot'">
+          <template #header>
+            <div class="nav-header">
+              <el-icon><ChatDotRound /></el-icon>
+              <span>智能问答</span>
+            </div>
+          </template>
+          <div class="chatbot-desc">
+            <p>有任何问题，随时向我提问</p>
+          </div>
+        </el-card>
+
+        <!-- 查看教材 -->
+        <el-card class="textbook-card clickable-card" :class="{ active: currentView === 'textbook' }" shadow="never" @click="showTextbook">
+          <template #header>
+            <div class="nav-header">
+              <el-icon><Collection /></el-icon>
+              <span>查看教材</span>
+            </div>
+          </template>
+          <div class="textbook-desc">
+            <p>随时查阅课程相关教材</p>
+          </div>
+        </el-card>
+
+        <!-- 题目推荐 -->
         <el-card class="smart-recommend-card clickable-card" :class="{ active: currentView === 'smart' }" shadow="never" @click="currentView = 'smart'">
           <template #header>
             <div class="nav-header">
               <el-icon><MagicStick /></el-icon>
-              <span>智能推荐</span>
+              <span>题目推荐</span>
             </div>
           </template>
           
           <div class="recommend-content">
-            <p class="recommend-desc">基于您的学习情况，为您智能推荐练习题目</p>
+            <p class="recommend-desc">基于您的学习情况，为您推荐练习题目</p>
             <el-button 
               type="primary" 
               @click.stop="refreshSmartRecommendations"
@@ -72,27 +98,14 @@
             </div>
           </div>
         </el-card>
-
-        <!-- 知识图谱 -->
-        <el-card class="graph-card clickable-card" :class="{ active: currentView === 'graph' }" shadow="never">
-          <template #header>
-            <div class="nav-header">
-              <el-icon><TrendCharts /></el-icon>
-              <span>知识图谱</span>
-            </div>
-          </template>
-          <div @click="currentView = 'graph'">
-            <KnowledgeGraph />
-          </div>
-        </el-card>
       </el-aside>
 
       <!-- 右侧内容区 -->
       <el-main class="questions-main">
-        <!-- 智能推荐内容 -->
+        <!-- 题目推荐内容 -->
         <div v-if="currentView === 'smart'" class="smart-content">
           <div class="questions-header">
-            <h3>智能推荐</h3>
+            <h3>题目推荐</h3>
           </div>
           <div class="questions-container">
             <QuestionCard 
@@ -103,7 +116,7 @@
             />
             <el-empty 
               v-if="smartRecommendedQuestions.length === 0"
-              description="暂无智能推荐题目"
+              description="暂无题目推荐"
               :image-size="120"
             />
           </div>
@@ -129,13 +142,21 @@
           </div>
         </div>
 
-        <!-- 知识图谱内容 -->
-        <div v-else-if="currentView === 'graph'" class="graph-content">
+        <!-- 智能问答内容 -->
+        <div v-else-if="currentView === 'chatbot'" class="chatbot-content">
           <div class="questions-header">
-            <h3>知识图谱</h3>
+            <h3>智能问答</h3>
           </div>
-          <div class="questions-container">
-            <LargeKnowledgeGraph />
+          <Chatbot @navigate="handleNavigate" />
+        </div>
+
+        <!-- 教材内容 -->
+        <div v-else-if="currentView === 'textbook'" class="textbook-content">
+          <div class="questions-header">
+            <h3>查看教材</h3>
+          </div>
+          <div class="pdf-container">
+            <iframe :src="textbookUrl" width="100%" height="100%" style="border: none;"></iframe>
           </div>
         </div>
 
@@ -170,50 +191,49 @@
 import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { ElMessage } from 'element-plus';
-import { Refresh, TrendCharts, MagicStick, Warning, CircleCheck } from '@element-plus/icons-vue';
-import KnowledgeGraph from '../components/KnowledgeGraph.vue';
+import { Refresh, MagicStick, Warning, CircleCheck, ChatDotRound, Collection } from '@element-plus/icons-vue';
 import QuestionCard from '../components/QuestionCard.vue';
-import LargeKnowledgeGraph from '../components/LargeKnowledgeGraph.vue';
+import Chatbot from '../components/Chatbot.vue';
 
 const router = useRouter();
 
 // 响应式数据
 const recommendLoading = ref(false);
 const weakPointLoading = ref(false);
-const currentView = ref('default'); // 'default', 'smart', 'weak', 'graph'
+const currentView = ref('chatbot'); // 'default', 'smart', 'weak', 'chatbot', 'textbook'
 const selectedWeakPoint = ref<any>(null); // 当前选中的薄弱知识点
 
 // 薄弱知识点数据
 const weakKnowledgePoints = ref([
   {
-    id: 'sets_weak',
-    name: '集合的运算',
-    description: '集合的并、交、差运算掌握不够',
-    score: 45
+    id: 'process_weak',
+    name: '进程管理',
+    description: '对进程状态转换和调度的理解不足',
+    score: 42
   },
   {
-    id: 'logic_weak',
-    name: '命题逻辑',
-    description: '命题的真值表分析需要加强',
-    score: 52
+    id: 'memory_weak',
+    name: '内存管理',
+    description: '分页和分段机制需要加强',
+    score: 55
   },
   {
-    id: 'graph_weak',
-    name: '图的遍历',
-    description: '深度优先和广度优先搜索算法',
-    score: 38
+    id: 'deadlock_weak',
+    name: '死锁',
+    description: '死锁的预防和检测算法掌握不牢',
+    score: 35
   },
   {
-    id: 'algebra_weak',
-    name: '群的性质',
-    description: '群的运算律和同态理论',
-    score: 41
-  },
-  {
-    id: 'tree_weak',
-    name: '二叉树',
-    description: '二叉树的构造和遍历算法',
+    id: 'io_weak',
+    name: 'I/O管理',
+    description: '对I/O中断和DMA的理解需要提升',
     score: 48
+  },
+  {
+    id: 'file_system_weak',
+    name: '文件系统',
+    description: '文件的物理和逻辑结构',
+    score: 51
   }
 ]);
 
@@ -221,45 +241,45 @@ const weakKnowledgePoints = ref([
 const questions = ref([
   {
     id: 1,
-    title: '测试题目1',
+    title: '在操作系统中，什么是进程？',
     type: '选择题',
     options: [
-      { key: 'A', text: 'A选项' },
-      { key: 'B', text: 'B选项' },
-      { key: 'C', text: 'C选项' },
-      { key: 'D', text: 'D选项' }
+      { key: 'A', text: '一个在内存中执行的程序' },
+      { key: 'B', text: '一个存储在磁盘上的文件' },
+      { key: 'C', text: '一个指向内存的指针' },
+      { key: 'D', text: '一个CPU寄存器' }
     ],
     correctAnswer: 'A',
-    explanation: '正确答案为A',
-    knowledgePoint: 'sets'
+    explanation: '进程是程序的一次执行过程，是系统进行资源分配和调度的基本单位。',
+    knowledgePoint: '进程管理'
   },
   {
     id: 2,
-    title: '测试题目2',
+    title: '下列哪项不是解决死锁的方法？',
     type: '选择题',
     options: [
-      { key: 'A', text: 'A选项' },
-      { key: 'B', text: 'B选项' },
-      { key: 'C', text: 'C选项' },
-      { key: 'D', text: 'D选项' }
+      { key: 'A', text: '死锁预防' },
+      { key: 'B', text: '死锁避免' },
+      { key: 'C', text: '死锁检测与解除' },
+      { key: 'D', text: '死锁忽略' }
     ],
-    correctAnswer: 'B',
-    explanation: '正确答案为B',
-    knowledgePoint: 'graph'
+    correctAnswer: 'D',
+    explanation: '死锁忽略（鸵鸟算法）是一种不处理死锁的策略，而不是一种解决方法。',
+    knowledgePoint: '死锁'
   },
   {
     id: 3,
-    title: '测试题目3',
+    title: '虚拟内存的主要目的是什么？',
     type: '选择题',
     options: [
-      { key: 'A', text: 'A选项' },
-      { key: 'B', text: 'B选项' },
-      { key: 'C', text: 'C选项' },
-      { key: 'D', text: 'D选项' }
+      { key: 'A', text: '提高CPU速度' },
+      { key: 'B', text: '扩大主存的逻辑容量' },
+      { key: 'C', text: '提高磁盘读写速度' },
+      { key: 'D', text: '增加进程数量' }
     ],
-    correctAnswer: 'C',
-    explanation: '正确答案是C',
-    knowledgePoint: 'algebra'
+    correctAnswer: 'B',
+    explanation: '虚拟内存技术允许程序使用比物理内存更大的地址空间，从而在逻辑上扩充了主存容量。',
+    knowledgePoint: '内存管理'
   }
 ]);
 
@@ -268,19 +288,34 @@ const filteredQuestions = computed(() => {
   return questions.value;
 });
 
-// 智能推荐题目
+// 题目推荐
 const smartRecommendedQuestions = computed(() => {
-  // 模拟智能推荐逻辑，返回最适合的题目
+  // 模拟题目推荐逻辑，返回最适合的题目
   return questions.value.slice(0, 3);
 });
 
 // 薄弱知识点题目  
 const weakPointQuestions = computed(() => {
+  if (!selectedWeakPoint.value) {
+    return [];
+  }
   // 模拟针对薄弱知识点的题目
-  return questions.value.filter(q => 
-    weakKnowledgePoints.value.some(weak => q.knowledgePoint?.includes(weak.name))
-  );
+  return questions.value.filter(q => q.knowledgePoint === selectedWeakPoint.value.name);
 });
+
+const textbookUrl = ref('/textbook.pdf');
+
+const showTextbook = () => {
+  textbookUrl.value = '/textbook.pdf';
+  currentView.value = 'textbook';
+};
+
+const handleNavigate = (payload: { view: string; param?: string }) => {
+  if (payload.view === 'textbook' && payload.param) {
+    textbookUrl.value = `/textbook.pdf#page=${payload.param}`;
+  }
+  currentView.value = payload.view;
+};
 
 const handleAnswerSubmitted = (result: any) => {
   console.log('答题结果:', result);
@@ -294,14 +329,14 @@ const refreshQuestions = () => {
 
 const refreshSmartRecommendations = async () => {
   recommendLoading.value = true;
-  ElMessage.info('正在重新获取智能推荐题目...');
+  ElMessage.info('正在重新获取题目推荐...');
   
   // 模拟API调用
   setTimeout(() => {
     // 这里可以模拟更新smartRecommendedQuestions
     ElMessage.success('已为您重新推荐合适的题目！');
     recommendLoading.value = false;
-    // 自动跳转到智能推荐页面
+    // 自动跳转到题目推荐页面
     currentView.value = 'smart';
   }, 2000);
 };
@@ -378,34 +413,13 @@ onMounted(() => {
   padding: 20px 10px 20px 10px;
 }
 
-.smart-recommend-card {
+.smart-recommend-card, .weak-points-card, .chatbot-card, .textbook-card {
   margin-bottom: 20px;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
-.smart-recommend-card.active {
-  border-color: #409EFF;
-  box-shadow: 0 4px 12px rgba(64, 158, 255, 0.15);
-}
-
-.weak-points-card {
-  margin-bottom: 20px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.weak-points-card.active {
-  border-color: #409EFF;
-  box-shadow: 0 4px 12px rgba(64, 158, 255, 0.15);
-}
-
-.graph-card {
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.graph-card.active {
+.smart-recommend-card.active, .weak-points-card.active, .chatbot-card.active, .textbook-card.active {
   border-color: #409EFF;
   box-shadow: 0 4px 12px rgba(64, 158, 255, 0.15);
 }
@@ -507,9 +521,13 @@ onMounted(() => {
   font-size: 14px;
 }
 
-.graph-card {
-  border-radius: 12px;
-  height: 450px;
+.textbook-desc,
+.chatbot-desc {
+  padding: 16px;
+  margin: -16px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px;
 }
 
 .clickable-card {
@@ -551,6 +569,23 @@ onMounted(() => {
   max-height: calc(100vh - 140px);
   overflow-y: auto;
   padding-right: 8px;
+}
+
+.chatbot-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.textbook-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-container {
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 /* 自定义滚动条 */

@@ -3,7 +3,7 @@
  */
 
 // 用户角色类型
-export type UserRole = 'student' | 'teacher'
+export type UserRole = 'student'
 
 // 答题相关类型
 export interface QuestionOption {
