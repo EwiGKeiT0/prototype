@@ -103,7 +103,7 @@
       <!-- 右侧内容区 -->
       <el-main class="questions-main">
         <!-- 题目推荐内容 -->
-        <div v-if="currentView === 'smart'" class="smart-content">
+        <div v-show="currentView === 'smart'" class="smart-content">
           <div class="questions-header">
             <h3>题目推荐</h3>
           </div>
@@ -123,7 +123,7 @@
         </div>
 
         <!-- 薄弱知识点内容 -->
-        <div v-else-if="currentView === 'weak'" class="weak-content">
+        <div v-show="currentView === 'weak'" class="weak-content">
           <div class="questions-header">
             <h3>{{ selectedWeakPoint ? selectedWeakPoint.name + ' 强化' : '薄弱知识点强化' }}</h3>
           </div>
@@ -143,7 +143,7 @@
         </div>
 
         <!-- 智能问答内容 -->
-        <div v-else-if="currentView === 'chatbot'" class="chatbot-content">
+        <div v-show="currentView === 'chatbot'" class="chatbot-content">
           <div class="questions-header">
             <h3>智能问答</h3>
           </div>
@@ -151,7 +151,7 @@
         </div>
 
         <!-- 教材内容 -->
-        <div v-else-if="currentView === 'textbook'" class="textbook-content">
+        <div v-if="currentView === 'textbook'" class="textbook-content">
           <div class="questions-header">
             <h3>查看教材</h3>
           </div>
@@ -161,7 +161,7 @@
         </div>
 
         <!-- 默认题目推荐 -->
-        <div v-else class="default-content">
+        <div v-show="currentView === 'default'" class="default-content">
           <div class="questions-header">
             <h3>个性化题目推荐</h3>
             <div class="filter-controls">
@@ -313,8 +313,10 @@ const showTextbook = () => {
 const handleNavigate = (payload: { view: string; param?: string }) => {
   if (payload.view === 'textbook' && payload.param) {
     textbookUrl.value = `/textbook.pdf#page=${payload.param}`;
+    currentView.value = 'textbook';
+  } else {
+    currentView.value = payload.view;
   }
-  currentView.value = payload.view;
 };
 
 const handleAnswerSubmitted = (result: any) => {
@@ -575,6 +577,11 @@ onMounted(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
+  /* 移除内边距，让Chatbot组件撑满 */
+  padding: 0; 
+  /* 确保背景和阴影在父级应用 */
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .textbook-content {
