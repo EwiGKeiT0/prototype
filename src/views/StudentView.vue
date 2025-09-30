@@ -154,6 +154,9 @@
         <div v-if="currentView === 'textbook'" class="textbook-content">
           <div class="questions-header">
             <h3>查看教材</h3>
+            <div class="filter-controls">
+              <el-button @click="currentView = 'chatbot'" :icon="ArrowLeft">返回智能问答</el-button>
+            </div>
           </div>
           <div class="pdf-container">
             <iframe :src="textbookUrl" width="100%" height="100%" style="border: none;"></iframe>
@@ -191,7 +194,7 @@
 import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { ElMessage } from 'element-plus';
-import { Refresh, MagicStick, Warning, CircleCheck, ChatDotRound, Collection } from '@element-plus/icons-vue';
+import { Refresh, MagicStick, Warning, CircleCheck, ChatDotRound, Collection, ArrowLeft } from '@element-plus/icons-vue';
 import QuestionCard from '../components/QuestionCard.vue';
 import Chatbot from '../components/Chatbot.vue';
 
