@@ -84,3 +84,37 @@ export interface PaginatedData<T> {
   list: T[]
   pagination: Pagination
 }
+
+// 题库相关类型
+export interface ImageInfo {
+  path: string
+  type: string
+}
+
+export interface DbQuestion {
+  id: string
+  chapter: number
+  question_number: string
+  content: string
+  has_images: boolean
+  matched_images: ImageInfo[]
+  image_count: number
+  content_with_images: string
+}
+
+export interface Metadata {
+  title: string
+  description: string
+  total_questions: number
+  questions_with_images: number
+  total_images: number
+  chapters: number[]
+  created_at: string
+  version: string
+  format: string
+}
+
+export interface QuestionBank {
+  metadata: Metadata
+  questions: DbQuestion[]
+}

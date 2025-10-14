@@ -1,0 +1,1199 @@
+{
+  "metadata": {
+    "title": "操作系统课后习题题库",
+    "description": "从教材1-13章提取的课后习题，包含文字描述和图片链接",
+    "total_questions": 114,
+    "questions_with_images": 6,
+    "total_images": 6,
+    "chapters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "created_at": "2024-01-01",
+    "version": "1.0",
+    "format": "text_description + local_image_paths"
+  },
+  "questions": [
+    {
+      "id": "第1章-1-1",
+      "chapter": 1,
+      "question_number": "1-1",
+      "content": "如何定义一个操作系统？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "如何定义一个操作系统？"
+    },
+    {
+      "id": "第1章-1-2",
+      "chapter": 1,
+      "question_number": "1-2",
+      "content": "早期操作系统设计的主要目标是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "早期操作系统设计的主要目标是什么？"
+    },
+    {
+      "id": "第1章-1-3",
+      "chapter": 1,
+      "question_number": "1-3",
+      "content": "何谓作业和作业步？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "何谓作业和作业步？"
+    },
+    {
+      "id": "第1章-1-4",
+      "chapter": 1,
+      "question_number": "1-4",
+      "content": "引入多道程序设计的主要目的是什么？什么是多道程序设计？它有哪些特点？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "引入多道程序设计的主要目的是什么？什么是多道程序设计？它有哪些特点？"
+    },
+    {
+      "id": "第1章-1-5",
+      "chapter": 1,
+      "question_number": "1-5",
+      "content": "叙述操作系统的基本功能和提供的服务。操作系统具有哪些特性？衡量一个批处 理操作系统有哪些性能指标？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "叙述操作系统的基本功能和提供的服务。操作系统具有哪些特性？衡量一个批处 理操作系统有哪些性能指标？"
+    },
+    {
+      "id": "第1章-1-6",
+      "chapter": 1,
+      "question_number": "1-6",
+      "content": "解释概念：吞吐量、周转时间和响应时间。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "解释概念：吞吐量、周转时间和响应时间。"
+    },
+    {
+      "id": "第1章-1-7",
+      "chapter": 1,
+      "question_number": "1-7",
+      "content": "批处理系统、分时系统和实时系统各有什么特点？各适合应用于哪些方面？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "批处理系统、分时系统和实时系统各有什么特点？各适合应用于哪些方面？"
+    },
+    {
+      "id": "第1章-1-8",
+      "chapter": 1,
+      "question_number": "1-8",
+      "content": "何谓用户与操作系统之间的接口？在用户与操作系统之间通常提供哪几种类型的 接口？其主要功能是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "何谓用户与操作系统之间的接口？在用户与操作系统之间通常提供哪几种类型的 接口？其主要功能是什么？"
+    },
+    {
+      "id": "第1章-1-9",
+      "chapter": 1,
+      "question_number": "1-9",
+      "content": "设计一个操作系统应遵循哪些规范标准？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "设计一个操作系统应遵循哪些规范标准？"
+    },
+    {
+      "id": "第1章-1-10",
+      "chapter": 1,
+      "question_number": "1-10",
+      "content": "常用的操作系统结构设计有哪些分类方法？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "常用的操作系统结构设计有哪些分类方法？"
+    },
+    {
+      "id": "第1章-1-11",
+      "chapter": 1,
+      "question_number": "1-11",
+      "content": "什么是对称多处理？它有什么好处？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么是对称多处理？它有什么好处？"
+    },
+    {
+      "id": "第1章-1-13",
+      "chapter": 1,
+      "question_number": "1-13",
+      "content": "为了实现系统保护，CPU 设计有多种状态，常用的是哪两种状态？各种状态下 执行什么程序？什么时候发生状态转换？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "为了实现系统保护，CPU 设计有多种状态，常用的是哪两种状态？各种状态下 执行什么程序？什么时候发生状态转换？"
+    },
+    {
+      "id": "第1章-1-18",
+      "chapter": 1,
+      "question_number": "1-18",
+      "content": "批处理系统提高了系统各种资源的利用率和系统吞吐量，因而缩短了作业的周 转时间。这句话对吗？请解释。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "批处理系统提高了系统各种资源的利用率和系统吞吐量，因而缩短了作业的周 转时间。这句话对吗？请解释。"
+    },
+    {
+      "id": "第1章-1-19",
+      "chapter": 1,
+      "question_number": "1-19",
+      "content": "在批处理系统中，有两个程序参与运行。其中程序 A 要做的工作依次为：计算 10 分钟，5 分钟 I/O1，计算 5 分钟，10 分钟 I/O2，计算 10 分钟；程序 B 要做的工作依次 为：10分钟I/O1，计算10分钟，5分钟I/O2，计算5分钟，10分钟I/O2。假定单道和多道 运行时都是A先运行。分别计算两种方式运行时，两个程序的周转时间和CPU的利用率。 23 --- 第 34 页 --- ================================================================================",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "在批处理系统中，有两个程序参与运行。其中程序 A 要做的工作依次为：计算 10 分钟，5 分钟 I/O1，计算 5 分钟，10 分钟 I/O2，计算 10 分钟；程序 B 要做的工作依次 为：10分钟I/O1，计算10分钟，5分钟I/O2，计算5分钟，10分钟I/O2。假定单道和多道 运行时都是A先运行。分别计算两种方式运行时，两个程序的周转时间和CPU的利用率。 23 --- 第 34 页 --- ================================================================================"
+    },
+    {
+      "id": "第2章-2-1",
+      "chapter": 2,
+      "question_number": "2-1",
+      "content": "何谓进程？试从动态性、并发性和独立性上比较进程与程序。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "何谓进程？试从动态性、并发性和独立性上比较进程与程序。"
+    },
+    {
+      "id": "第2章-2-2",
+      "chapter": 2,
+      "question_number": "2-2",
+      "content": "进程控制块的作用是什么？它主要包括哪几部分内容？ 39 --- 第 50 页 ---",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "进程控制块的作用是什么？它主要包括哪几部分内容？ 39 --- 第 50 页 ---"
+    },
+    {
+      "id": "第2章-2-3",
+      "chapter": 2,
+      "question_number": "2-3",
+      "content": "进程有哪几种基本状态？试举出使进程状态发生变化的事件并描绘它的状态转换图。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "进程有哪几种基本状态？试举出使进程状态发生变化的事件并描绘它的状态转换图。"
+    },
+    {
+      "id": "第2章-2-4",
+      "chapter": 2,
+      "question_number": "2-4",
+      "content": "处理机的调度通常分为几级？它们的主要职能是什么？为什么要引入交换调度？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "处理机的调度通常分为几级？它们的主要职能是什么？为什么要引入交换调度？"
+    },
+    {
+      "id": "第2章-2-5",
+      "chapter": 2,
+      "question_number": "2-5",
+      "content": "试从调度性、并发性、拥有资源及系统开销4个方面对进程和线程进行比较。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "试从调度性、并发性、拥有资源及系统开销4个方面对进程和线程进行比较。"
+    },
+    {
+      "id": "第2章-2-6",
+      "chapter": 2,
+      "question_number": "2-6",
+      "content": "作业调度存在于哪种类型的操作系统中？为什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "作业调度存在于哪种类型的操作系统中？为什么？"
+    },
+    {
+      "id": "第2章-2-8",
+      "chapter": 2,
+      "question_number": "2-8",
+      "content": "给定一组作业 J ，J ，…，J 。它们的运行时间分别为 T ，T ，…，T ，假定这些 1 2 n 1 2 n 作业同时到达，并且在一台处理机上按单道方式运行。试证明按最短作业优先算法调度时， 平均周转时间最短。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "给定一组作业 J ，J ，…，J 。它们的运行时间分别为 T ，T ，…，T ，假定这些 1 2 n 1 2 n 作业同时到达，并且在一台处理机上按单道方式运行。试证明按最短作业优先算法调度时， 平均周转时间最短。"
+    },
+    {
+      "id": "第2章-2-10",
+      "chapter": 2,
+      "question_number": "2-10",
+      "content": "下面哪种调度算法可能导致出现进程饿死现象的发生？ A．先来先服务 B．短作业优先 C．轮转法 D．优先级法",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "下面哪种调度算法可能导致出现进程饿死现象的发生？ A．先来先服务 B．短作业优先 C．轮转法 D．优先级法"
+    },
+    {
+      "id": "第3章-3-1",
+      "chapter": 3,
+      "question_number": "3-1",
+      "content": "并发执行的进程在系统中通常表现为几种关系？各是在什么情况下发生的? 66  --- 第 77 页 ---",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "并发执行的进程在系统中通常表现为几种关系？各是在什么情况下发生的? 66  --- 第 77 页 ---"
+    },
+    {
+      "id": "第3章-3-2",
+      "chapter": 3,
+      "question_number": "3-2",
+      "content": "什么叫临界资源？什么叫临界区？对临界区的使用应符合哪些规则？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么叫临界资源？什么叫临界区？对临界区的使用应符合哪些规则？"
+    },
+    {
+      "id": "第3章-3-3",
+      "chapter": 3,
+      "question_number": "3-3",
+      "content": "若信号量S表示某一类资源，则对S执行P、V操作的直观含义是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "若信号量S表示某一类资源，则对S执行P、V操作的直观含义是什么？"
+    },
+    {
+      "id": "第3章-3-4",
+      "chapter": 3,
+      "question_number": "3-4",
+      "content": "在用P、V操作实现进程通信时，应根据什么原则对信号量赋初值?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "在用P、V操作实现进程通信时，应根据什么原则对信号量赋初值?"
+    },
+    {
+      "id": "第3章-3-5",
+      "chapter": 3,
+      "question_number": "3-5",
+      "content": "程序段 S1、S2、S3 和 S4 之间存在如图 3.14 所示的前序关系。试说明哪些程序 段可以并发执行？ 图3.14 题",
+      "has_images": true,
+      "matched_images": [
+        {
+          "path": "extracted_images/fig_3_14_page77.png",
+          "type": "figure"
+        }
+      ],
+      "image_count": 1,
+      "content_with_images": "程序段 S1、S2、S3 和 S4 之间存在如图 3.14 所示的前序关系。试说明哪些程序 段可以并发执行？ 图3.14 题 [图片: extracted_images/fig_3_14_page77.png]"
+    },
+    {
+      "id": "第3章-3-6",
+      "chapter": 3,
+      "question_number": "3-6",
+      "content": "当进程对信号量 S 执行 P、V 操作时，S 的值发生变化，当 S>0、S=0 和 S<0 时，其物理意义是什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "当进程对信号量 S 执行 P、V 操作时，S 的值发生变化，当 S>0、S=0 和 S<0 时，其物理意义是什么?"
+    },
+    {
+      "id": "第3章-3-7",
+      "chapter": 3,
+      "question_number": "3-7",
+      "content": "设系统有 n+1 个进程，其中有 n 个发送进程和 1 个接收进程。如图 3.15 所示， A ，A ，…，A 通过一个单缓冲区分别不断地向进程 B 发消息，B 不断地取走缓冲区中的 1 2 n 消息，而且必须取走发来的每一个消息。刚开始时，缓冲区为空。试用 P、V 操作正确实现 进程之间的同步。",
+      "has_images": true,
+      "matched_images": [
+        {
+          "path": "extracted_images/fig_3_15_page77.png",
+          "type": "figure"
+        }
+      ],
+      "image_count": 1,
+      "content_with_images": "设系统有 n+1 个进程，其中有 n 个发送进程和 1 个接收进程。如图 3.15 所示， A ，A ，…，A 通过一个单缓冲区分别不断地向进程 B 发消息，B 不断地取走缓冲区中的 1 2 n 消息，而且必须取走发来的每一个消息。刚开始时，缓冲区为空。试用 P、V 操作正确实现 进程之间的同步。 [图片: extracted_images/fig_3_15_page77.png]"
+    },
+    {
+      "id": "第3章-3-8",
+      "chapter": 3,
+      "question_number": "3-8",
+      "content": "有一容量为 100 的循环缓冲区，有多个并发执行进程通过该缓冲区进行通信。为 了正确地管理缓冲区，系统设置了两个读写指针分别为 IN、OUT。IN 和 OUT 的值如何反 映缓冲区为空还是满的情况?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "有一容量为 100 的循环缓冲区，有多个并发执行进程通过该缓冲区进行通信。为 了正确地管理缓冲区，系统设置了两个读写指针分别为 IN、OUT。IN 和 OUT 的值如何反 映缓冲区为空还是满的情况?"
+    },
+    {
+      "id": "第3章-3-10",
+      "chapter": 3,
+      "question_number": "3-10",
+      "content": "什么是死锁？死锁产生的原因和4个必要条件是什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么是死锁？死锁产生的原因和4个必要条件是什么?"
+    },
+    {
+      "id": "第3章-3-11",
+      "chapter": 3,
+      "question_number": "3-11",
+      "content": "如何利用银行家算法判断一个系统的状态是否安全？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "如何利用银行家算法判断一个系统的状态是否安全？"
+    },
+    {
+      "id": "第3章-3-12",
+      "chapter": 3,
+      "question_number": "3-12",
+      "content": "假定系统有 4 个同类资源和 3 个进程，进程每次只申请或释放一个资源。每个 进程最大资源需求量为2。请问，这个系统为什么不会发生死锁?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "假定系统有 4 个同类资源和 3 个进程，进程每次只申请或释放一个资源。每个 进程最大资源需求量为2。请问，这个系统为什么不会发生死锁?"
+    },
+    {
+      "id": "第3章-3-13",
+      "chapter": 3,
+      "question_number": "3-13",
+      "content": "一个计算机系统有 6 个磁带驱动器，n 个进程，每个进程最多需要两个磁带驱动 器驱动。当n为何值时，系统不会发生死锁?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "一个计算机系统有 6 个磁带驱动器，n 个进程，每个进程最多需要两个磁带驱动 器驱动。当n为何值时，系统不会发生死锁?"
+    },
+    {
+      "id": "第3章-3-14",
+      "chapter": 3,
+      "question_number": "3-14",
+      "content": "假定系统有N个进程共享M个同类资源，规定每个 进程至少申请一个资源，每个进程的最大需求不超过 M，所有 进程的需求总和小于 M+N。为什么在这种情况下也决不会发 生死锁?试证明。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "假定系统有N个进程共享M个同类资源，规定每个 进程至少申请一个资源，每个进程的最大需求不超过 M，所有 进程的需求总和小于 M+N。为什么在这种情况下也决不会发 生死锁?试证明。"
+    },
+    {
+      "id": "第3章-3-15",
+      "chapter": 3,
+      "question_number": "3-15",
+      "content": "设有 8 个进程 M1，M2，…，M8，它们有如 图 3.16 所示的优先关系，试用 P、V 操作实现这些进程间 的同步。 图3.16 进程之间的优先关系 67 --- 第 78 页 ---",
+      "has_images": true,
+      "matched_images": [
+        {
+          "path": "extracted_images/fig_3_16_page77.png",
+          "type": "figure"
+        }
+      ],
+      "image_count": 1,
+      "content_with_images": "设有 8 个进程 M1，M2，…，M8，它们有如 图 3.16 所示的优先关系，试用 P、V 操作实现这些进程间 的同步。 图3.16 进程之间的优先关系 67 --- 第 78 页 --- [图片: extracted_images/fig_3_16_page77.png]"
+    },
+    {
+      "id": "第3章-3-18",
+      "chapter": 3,
+      "question_number": "3-18",
+      "content": "有一个理发师、一把理发椅和 n 把供等候理发的顾客坐的椅子。如果没有顾 客，则理发师便坐在椅子上睡觉，当一个顾客到来时，必须唤醒理发师，请求理发；如果理 发师正在理发时，又有顾客来到，只要有空椅子，他就坐下来等待，如果没有空椅子，他就 离开。请为理发师和顾客各编写一段程序来描述他们的同步过程。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "有一个理发师、一把理发椅和 n 把供等候理发的顾客坐的椅子。如果没有顾 客，则理发师便坐在椅子上睡觉，当一个顾客到来时，必须唤醒理发师，请求理发；如果理 发师正在理发时，又有顾客来到，只要有空椅子，他就坐下来等待，如果没有空椅子，他就 离开。请为理发师和顾客各编写一段程序来描述他们的同步过程。"
+    },
+    {
+      "id": "第3章-3-22",
+      "chapter": 3,
+      "question_number": "3-22",
+      "content": "图 3.19 的资源分配图中，方框代表资源实体，其内的小圆圈代表实际的资源 数；圆圈代表进程实体。化简该图并说明有无进程处于死锁状态。 图3.19 题",
+      "has_images": true,
+      "matched_images": [
+        {
+          "path": "extracted_images/fig_3_19_page79.png",
+          "type": "figure"
+        }
+      ],
+      "image_count": 1,
+      "content_with_images": "图 3.19 的资源分配图中，方框代表资源实体，其内的小圆圈代表实际的资源 数；圆圈代表进程实体。化简该图并说明有无进程处于死锁状态。 图3.19 题 [图片: extracted_images/fig_3_19_page79.png]"
+    },
+    {
+      "id": "第4章-4-1",
+      "chapter": 4,
+      "question_number": "4-1",
+      "content": "解释下列术语：名字空间、地址空间、存储空间、逻辑地址、线性地址、物理地址。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "解释下列术语：名字空间、地址空间、存储空间、逻辑地址、线性地址、物理地址。"
+    },
+    {
+      "id": "第4章-4-2",
+      "chapter": 4,
+      "question_number": "4-2",
+      "content": "什么是地址重定位？它分为哪两种？各是依据什么实现的？试比较它们的优缺点。 98  --- 第 109 页 ---",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么是地址重定位？它分为哪两种？各是依据什么实现的？试比较它们的优缺点。 98  --- 第 109 页 ---"
+    },
+    {
+      "id": "第4章-4-3",
+      "chapter": 4,
+      "question_number": "4-3",
+      "content": "存储器管理的主要功能是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "存储器管理的主要功能是什么？"
+    },
+    {
+      "id": "第4章-4-4",
+      "chapter": 4,
+      "question_number": "4-4",
+      "content": "存储保护的目的是什么？对各种存储器管理方案实现存储保护时，硬件和软件各 需做什么工作？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "存储保护的目的是什么？对各种存储器管理方案实现存储保护时，硬件和软件各 需做什么工作？"
+    },
+    {
+      "id": "第4章-4-6",
+      "chapter": 4,
+      "question_number": "4-6",
+      "content": "什么是覆盖？什么是交换？两者之间有什么相同点和不同点？覆盖管理与虚存管 理技术有什么相同点和不同点？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么是覆盖？什么是交换？两者之间有什么相同点和不同点？覆盖管理与虚存管 理技术有什么相同点和不同点？"
+    },
+    {
+      "id": "第4章-4-7",
+      "chapter": 4,
+      "question_number": "4-7",
+      "content": "简述页式管理的地址变换过程。它需要什么硬件和软件支持?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "简述页式管理的地址变换过程。它需要什么硬件和软件支持?"
+    },
+    {
+      "id": "第4章-4-9",
+      "chapter": 4,
+      "question_number": "4-9",
+      "content": "段式存储器管理有什么优点？它与页式管理的主要区别是什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "段式存储器管理有什么优点？它与页式管理的主要区别是什么?"
+    },
+    {
+      "id": "第4章-4-10",
+      "chapter": 4,
+      "question_number": "4-10",
+      "content": "叙述虚拟存储器的基本原理。虚拟存储器的容量能大于主存容量加辅存容量 之和吗?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "叙述虚拟存储器的基本原理。虚拟存储器的容量能大于主存容量加辅存容量 之和吗?"
+    },
+    {
+      "id": "第4章-4-11",
+      "chapter": 4,
+      "question_number": "4-11",
+      "content": "叙述产生缺页中断时，系统应做哪些工作?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "叙述产生缺页中断时，系统应做哪些工作?"
+    },
+    {
+      "id": "第4章-4-12",
+      "chapter": 4,
+      "question_number": "4-12",
+      "content": "如果主存中某页正在与外围设备交换信息，那么当发生缺页中断时，可以将这 一页淘汰吗?为什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "如果主存中某页正在与外围设备交换信息，那么当发生缺页中断时，可以将这 一页淘汰吗?为什么?"
+    },
+    {
+      "id": "第4章-4-13",
+      "chapter": 4,
+      "question_number": "4-13",
+      "content": "什么叫系统抖动？工作集模型如何防止系统抖动?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么叫系统抖动？工作集模型如何防止系统抖动?"
+    },
+    {
+      "id": "第4章-4-16",
+      "chapter": 4,
+      "question_number": "4-16",
+      "content": "一个进程在执行过程中，按如下顺序依次访问各页，进程分得四个主存块，问 分别采用 FIFO、LRU 和 OPT 算法时，要产生多少次缺页中断？设进程开始运行时，主存 没有页面。页访问串顺序为：0，1，7，2，3，2，7，1，0，3，2，5，1，7。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "一个进程在执行过程中，按如下顺序依次访问各页，进程分得四个主存块，问 分别采用 FIFO、LRU 和 OPT 算法时，要产生多少次缺页中断？设进程开始运行时，主存 没有页面。页访问串顺序为：0，1，7，2，3，2，7，1，0，3，2，5，1，7。"
+    },
+    {
+      "id": "第4章-4-18",
+      "chapter": 4,
+      "question_number": "4-18",
+      "content": "一台计算机含有65536B的存储空间，这一空间被分成许多长度为4096B的页。 有一程序，其代码段为 32768B，数据段为 16386B，栈段为 15870B。试问该机器的主存空 间适合这个进程吗？如果每页改成512B，适合吗？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "一台计算机含有65536B的存储空间，这一空间被分成许多长度为4096B的页。 有一程序，其代码段为 32768B，数据段为 16386B，栈段为 15870B。试问该机器的主存空 间适合这个进程吗？如果每页改成512B，适合吗？"
+    },
+    {
+      "id": "第4章-4-21",
+      "chapter": 4,
+      "question_number": "4-21",
+      "content": "一个请求分页系统中，内存的读写周期为 8ns，当配置有快表时，查快表需要 1ns，内外存之间传送一个页面的平均时间为 5000ns。假定快表的命中率为 75%，页面失效 率为10%，求内存的有效存取时间。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "一个请求分页系统中，内存的读写周期为 8ns，当配置有快表时，查快表需要 1ns，内外存之间传送一个页面的平均时间为 5000ns。假定快表的命中率为 75%，页面失效 率为10%，求内存的有效存取时间。"
+    },
+    {
+      "id": "第4章-4-22",
+      "chapter": 4,
+      "question_number": "4-22",
+      "content": "设计一个页表应考虑哪些因素？选择页大小时应考虑哪些因素？现代操作系统 为什么采用多级页表？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "设计一个页表应考虑哪些因素？选择页大小时应考虑哪些因素？现代操作系统 为什么采用多级页表？"
+    },
+    {
+      "id": "第4章-4-23",
+      "chapter": 4,
+      "question_number": "4-23",
+      "content": "某计算机的 CPU 的地址长度为 64 位，若页的大小为 8192B，页表项占 4B。要 求一个页表的信息应该放在一个页中。问采用几级页表比较好？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "某计算机的 CPU 的地址长度为 64 位，若页的大小为 8192B，页表项占 4B。要 求一个页表的信息应该放在一个页中。问采用几级页表比较好？"
+    },
+    {
+      "id": "第4章-4-24",
+      "chapter": 4,
+      "question_number": "4-24",
+      "content": "给出段式虚拟存储器管理实现地址变换的流程图。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "给出段式虚拟存储器管理实现地址变换的流程图。"
+    },
+    {
+      "id": "第4章-4-25",
+      "chapter": 4,
+      "question_number": "4-25",
+      "content": "什么是写时复制技术？它有什么好处？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么是写时复制技术？它有什么好处？"
+    },
+    {
+      "id": "第4章-4-26",
+      "chapter": 4,
+      "question_number": "4-26",
+      "content": "解释下列术语：程序的局部性原理、动态链接。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "解释下列术语：程序的局部性原理、动态链接。"
+    },
+    {
+      "id": "第4章-4-27",
+      "chapter": 4,
+      "question_number": "4-27",
+      "content": "本章共介绍了 10 种存储器管理方案，请指出每一种方案有哪些特点？存在哪些 问题？后一种方案对前一种方案进行了改进，系统增加了哪些软硬件开销？ 10 0 --- 第 111 页 --- ================================================================================",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "本章共介绍了 10 种存储器管理方案，请指出每一种方案有哪些特点？存在哪些 问题？后一种方案对前一种方案进行了改进，系统增加了哪些软硬件开销？ 10 0 --- 第 111 页 --- ================================================================================"
+    },
+    {
+      "id": "第5章-5-1",
+      "chapter": 5,
+      "question_number": "5-1",
+      "content": "什么是文件?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么是文件?"
+    },
+    {
+      "id": "第5章-5-2",
+      "chapter": 5,
+      "question_number": "5-2",
+      "content": "什么是文件系统?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么是文件系统?"
+    },
+    {
+      "id": "第5章-5-3",
+      "chapter": 5,
+      "question_number": "5-3",
+      "content": "文件在文件存储器上有几种组织形式?对于不同的组织形式，文件系统是如何进行 管理的?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "文件在文件存储器上有几种组织形式?对于不同的组织形式，文件系统是如何进行 管理的?"
+    },
+    {
+      "id": "第5章-5-4",
+      "chapter": 5,
+      "question_number": "5-4",
+      "content": "文件目录的作用是什么？文件目录项通常包含哪些内容?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "文件目录的作用是什么？文件目录项通常包含哪些内容?"
+    },
+    {
+      "id": "第5章-5-5",
+      "chapter": 5,
+      "question_number": "5-5",
+      "content": "文件存储空间的管理方法有几种？它们各是如何实现文件存储空间的分配和回收 的？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "文件存储空间的管理方法有几种？它们各是如何实现文件存储空间的分配和回收 的？"
+    },
+    {
+      "id": "第5章-5-6",
+      "chapter": 5,
+      "question_number": "5-6",
+      "content": "建立多级目录有哪些好处?文件的重名和共享问题是如何得到解决的?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "建立多级目录有哪些好处?文件的重名和共享问题是如何得到解决的?"
+    },
+    {
+      "id": "第5章-5-7",
+      "chapter": 5,
+      "question_number": "5-7",
+      "content": "文件系统中，使用打开和关闭文件命令的目的是什么?它们的具体功能是什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "文件系统中，使用打开和关闭文件命令的目的是什么?它们的具体功能是什么?"
+    },
+    {
+      "id": "第5章-5-8",
+      "chapter": 5,
+      "question_number": "5-8",
+      "content": "一个支持单级目录的操作系统，允许有任意多个文件和任意长的文件名，能否把 它近似模拟成多级目录的文件系统?如何模拟?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "一个支持单级目录的操作系统，允许有任意多个文件和任意长的文件名，能否把 它近似模拟成多级目录的文件系统?如何模拟?"
+    },
+    {
+      "id": "第5章-5-9",
+      "chapter": 5,
+      "question_number": "5-9",
+      "content": "文件存储空间管理可采用成组自由块链表或位示图。若一磁盘有 B 个盘块，其中 有 F 个自由块，盘空间用 D 位表示。试给出使用自由块链表比使用位示图占用更少的空间 的条件。当D为16时，给出满足条件的自由空间占整个空间的百分比。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "文件存储空间管理可采用成组自由块链表或位示图。若一磁盘有 B 个盘块，其中 有 F 个自由块，盘空间用 D 位表示。试给出使用自由块链表比使用位示图占用更少的空间 的条件。当D为16时，给出满足条件的自由空间占整个空间的百分比。"
+    },
+    {
+      "id": "第5章-5-10",
+      "chapter": 5,
+      "question_number": "5-10",
+      "content": "文件系统的执行速度依赖于缓冲池中找到盘块的比率。假设盘块从缓冲池读出 用 1ms，从盘上读出用 40ms，从缓冲池找到盘块的比率为 n，请给出一个公式计算读盘块 的平均时间，并画出n从0到1.0的函数图像。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "文件系统的执行速度依赖于缓冲池中找到盘块的比率。假设盘块从缓冲池读出 用 1ms，从盘上读出用 40ms，从缓冲池找到盘块的比率为 n，请给出一个公式计算读盘块 的平均时间，并画出n从0到1.0的函数图像。"
+    },
+    {
+      "id": "第5章-5-12",
+      "chapter": 5,
+      "question_number": "5-12",
+      "content": "试比较空白块链和成组链接的分配和回收算法的优缺点。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "试比较空白块链和成组链接的分配和回收算法的优缺点。"
+    },
+    {
+      "id": "第5章-5-13",
+      "chapter": 5,
+      "question_number": "5-13",
+      "content": "磁盘上有一个链接文件 A。它有 10 个记录，每个记录的长度为 256B，存放在 5 个磁盘块中，如图5.19所示。若要访问该文件的第1574字节数 物 理 块 号 链 接 指 针 据，应该访问哪个磁盘块？要访问几次磁盘才能将该字节的内 5 7 容读出。 7 14",
+      "has_images": true,
+      "matched_images": [
+        {
+          "path": "extracted_images/fig_5_19_page133.png",
+          "type": "figure"
+        }
+      ],
+      "image_count": 1,
+      "content_with_images": "磁盘上有一个链接文件 A。它有 10 个记录，每个记录的长度为 256B，存放在 5 个磁盘块中，如图5.19所示。若要访问该文件的第1574字节数 物 理 块 号 链 接 指 针 据，应该访问哪个磁盘块？要访问几次磁盘才能将该字节的内 5 7 容读出。 7 14 [图片: extracted_images/fig_5_19_page133.png]"
+    },
+    {
+      "id": "第5章-5-14",
+      "chapter": 5,
+      "question_number": "5-14",
+      "content": "一个文件系统中，当前只有根目录被缓存到主存。 14 4 假定所有目录文件都只占用一个磁盘块。那么要打开文件 4 10 /usr/lim/course/os/result.txt，共需要多少次磁盘操作？ 10 0",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "一个文件系统中，当前只有根目录被缓存到主存。 14 4 假定所有目录文件都只占用一个磁盘块。那么要打开文件 4 10 /usr/lim/course/os/result.txt，共需要多少次磁盘操作？ 10 0"
+    },
+    {
+      "id": "第5章-5-15",
+      "chapter": 5,
+      "question_number": "5-15",
+      "content": "一个文件系统采用索引结构来组织文件，且索引表 图5.19 习题",
+      "has_images": true,
+      "matched_images": [
+        {
+          "path": "extracted_images/fig_5_19_page133.png",
+          "type": "figure"
+        }
+      ],
+      "image_count": 1,
+      "content_with_images": "一个文件系统采用索引结构来组织文件，且索引表 图5.19 习题 [图片: extracted_images/fig_5_19_page133.png]"
+    },
+    {
+      "id": "第6章-6-1",
+      "chapter": 6,
+      "question_number": "6-1",
+      "content": "设备管理的主要目的是什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "设备管理的主要目的是什么?"
+    },
+    {
+      "id": "第6章-6-2",
+      "chapter": 6,
+      "question_number": "6-2",
+      "content": "设备独立性的含义是什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "设备独立性的含义是什么?"
+    },
+    {
+      "id": "第6章-6-3",
+      "chapter": 6,
+      "question_number": "6-3",
+      "content": "从信息的组织角度看，可将设备分成哪些类型? 各类设备的物理特性是什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "从信息的组织角度看，可将设备分成哪些类型? 各类设备的物理特性是什么?"
+    },
+    {
+      "id": "第6章-6-4",
+      "chapter": 6,
+      "question_number": "6-4",
+      "content": "从分配角度看，设备有独占型、共享型和虚拟型设备。什么是虚拟型设备？各自 的分配策略有何不同？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "从分配角度看，设备有独占型、共享型和虚拟型设备。什么是虚拟型设备？各自 的分配策略有何不同？"
+    },
+    {
+      "id": "第6章-6-5",
+      "chapter": 6,
+      "question_number": "6-5",
+      "content": "同步I/O和异步I/O的区别是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "同步I/O和异步I/O的区别是什么？"
+    },
+    {
+      "id": "第6章-6-7",
+      "chapter": 6,
+      "question_number": "6-7",
+      "content": "打印机的输出文件为什么通常要在打印前假脱机到磁盘上?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "打印机的输出文件为什么通常要在打印前假脱机到磁盘上?"
+    },
+    {
+      "id": "第6章-6-8",
+      "chapter": 6,
+      "question_number": "6-8",
+      "content": "通道有几种类型?它们之间的区别是什么?",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "通道有几种类型?它们之间的区别是什么?"
+    },
+    {
+      "id": "第6章-6-9",
+      "chapter": 6,
+      "question_number": "6-9",
+      "content": "引入缓冲技术的目的是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "引入缓冲技术的目的是什么？"
+    },
+    {
+      "id": "第6章-6-10",
+      "chapter": 6,
+      "question_number": "6-10",
+      "content": "试叙述Spooling设置的目的？它由几部分组成？各部分实现的功能是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "试叙述Spooling设置的目的？它由几部分组成？各部分实现的功能是什么？"
+    },
+    {
+      "id": "第6章-6-11",
+      "chapter": 6,
+      "question_number": "6-11",
+      "content": "根据设备的控制方式的不同，主存与设备之间的数据传输控制方式有几种？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "根据设备的控制方式的不同，主存与设备之间的数据传输控制方式有几种？"
+    },
+    {
+      "id": "第6章-6-12",
+      "chapter": 6,
+      "question_number": "6-12",
+      "content": "假定一个硬盘有 100 个柱面，每个柱面有 10 个磁道，每个磁道有 15 个扇区。 当进程要访问磁盘的12345扇区时，计算磁盘的三维物理扇区号。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "假定一个硬盘有 100 个柱面，每个柱面有 10 个磁道，每个磁道有 15 个扇区。 当进程要访问磁盘的12345扇区时，计算磁盘的三维物理扇区号。"
+    },
+    {
+      "id": "第6章-6-15",
+      "chapter": 6,
+      "question_number": "6-15",
+      "content": "某系统文件存储空间共有 80 个柱面，20 道/柱面，6 块/磁道，每块有 1KB。用 位示图表示。每张位示图 64 个字，其中有 4 个字包含的是控制信息。位示图中的位若为 1，表示占用；为0表示空闲。试给出分配和回收一个盘块的计算公式。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "某系统文件存储空间共有 80 个柱面，20 道/柱面，6 块/磁道，每块有 1KB。用 位示图表示。每张位示图 64 个字，其中有 4 个字包含的是控制信息。位示图中的位若为 1，表示占用；为0表示空闲。试给出分配和回收一个盘块的计算公式。"
+    },
+    {
+      "id": "第6章-6-17",
+      "chapter": 6,
+      "question_number": "6-17",
+      "content": "什么是独立磁盘的冗余阵列?它分为几级？各有什么特色？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "什么是独立磁盘的冗余阵列?它分为几级？各有什么特色？"
+    },
+    {
+      "id": "第6章-6-19",
+      "chapter": 6,
+      "question_number": "6-19",
+      "content": "在 I/O 系统中，出现数据传输完毕、设备出错、设备正在传输数据、指令错、缺 页错等事件中，哪些会引起I/O中断？为什么？ 14 4 --- 第 155 页 --- 第二篇 Linux 操作系统 ================================================================================",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "在 I/O 系统中，出现数据传输完毕、设备出错、设备正在传输数据、指令错、缺 页错等事件中，哪些会引起I/O中断？为什么？ 14 4 --- 第 155 页 --- 第二篇 Linux 操作系统 ================================================================================"
+    },
+    {
+      "id": "第7章-7-1",
+      "chapter": 7,
+      "question_number": "7-1",
+      "content": "Linux系统进程有几种状态？试叙述状态转换的条件是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统进程有几种状态？试叙述状态转换的条件是什么？"
+    },
+    {
+      "id": "第7章-7-2",
+      "chapter": 7,
+      "question_number": "7-2",
+      "content": "Linux系统采用什么方法管理系统中处于各种不同状态的进程？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统采用什么方法管理系统中处于各种不同状态的进程？"
+    },
+    {
+      "id": "第7章-7-3",
+      "chapter": 7,
+      "question_number": "7-3",
+      "content": "Linux系统有几种创建进程的命令？它们之间的区别是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统有几种创建进程的命令？它们之间的区别是什么？"
+    },
+    {
+      "id": "第7章-7-4",
+      "chapter": 7,
+      "question_number": "7-4",
+      "content": "Linux系统有几类进程？各自的调度策略是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统有几类进程？各自的调度策略是什么？"
+    },
+    {
+      "id": "第7章-7-5",
+      "chapter": 7,
+      "question_number": "7-5",
+      "content": "Linux系统使用了哪些同步技术实现内核同步？ 16 2 --- 第 173 页 --- ================================================================================",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统使用了哪些同步技术实现内核同步？ 16 2 --- 第 173 页 --- ================================================================================"
+    },
+    {
+      "id": "第8章-8-1",
+      "chapter": 8,
+      "question_number": "8-1",
+      "content": "Linux 系统进程的地址空间是如何划分的？系统是如何管理进程使用的各个虚存 空间的？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux 系统进程的地址空间是如何划分的？系统是如何管理进程使用的各个虚存 空间的？"
+    },
+    {
+      "id": "第8章-8-2",
+      "chapter": 8,
+      "question_number": "8-2",
+      "content": "分区页框分配器管理哪些内存区？伙伴系统的实现原理是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "分区页框分配器管理哪些内存区？伙伴系统的实现原理是什么？"
+    },
+    {
+      "id": "第8章-8-3",
+      "chapter": 8,
+      "question_number": "8-3",
+      "content": "slab分配器的作用是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "slab分配器的作用是什么？"
+    },
+    {
+      "id": "第8章-8-4",
+      "chapter": 8,
+      "question_number": "8-4",
+      "content": "Linux系统对内核占用的1GB空间是如何管理的？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统对内核占用的1GB空间是如何管理的？"
+    },
+    {
+      "id": "第8章-8-5",
+      "chapter": 8,
+      "question_number": "8-5",
+      "content": "Linux系统采用几级页表来管理进程的虚空间？叙述页表的组成和各个字段的作用。 18 4 --- 第 195 页 --- ================================================================================",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统采用几级页表来管理进程的虚空间？叙述页表的组成和各个字段的作用。 18 4 --- 第 195 页 --- ================================================================================"
+    },
+    {
+      "id": "第9章-9-1",
+      "chapter": 9,
+      "question_number": "9-1",
+      "content": "试述Linux的Ext2文件卷的布局，及各部分的作用。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "试述Linux的Ext2文件卷的布局，及各部分的作用。"
+    },
+    {
+      "id": "第9章-9-2",
+      "chapter": 9,
+      "question_number": "9-2",
+      "content": "试述Ext2的目录结构和索引节点包含的内容及作用。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "试述Ext2的目录结构和索引节点包含的内容及作用。"
+    },
+    {
+      "id": "第9章-9-3",
+      "chapter": 9,
+      "question_number": "9-3",
+      "content": "采用什么方法管理磁盘空间和索引节点空间？ 19 8 --- 第 209 页 --- ================================================================================",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "采用什么方法管理磁盘空间和索引节点空间？ 19 8 --- 第 209 页 --- ================================================================================"
+    },
+    {
+      "id": "第10章-10-1",
+      "chapter": 10,
+      "question_number": "10-1",
+      "content": "实现虚拟文件系统，需要哪些数据结构的支持？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "实现虚拟文件系统，需要哪些数据结构的支持？"
+    },
+    {
+      "id": "第10章-10-2",
+      "chapter": 10,
+      "question_number": "10-2",
+      "content": "如何使一个非Linux文件系统能够被Linux系统支持和操作？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "如何使一个非Linux文件系统能够被Linux系统支持和操作？"
+    },
+    {
+      "id": "第10章-10-3",
+      "chapter": 10,
+      "question_number": "10-3",
+      "content": "当一个进程打开一个文件时，核心是通过哪些数据结构来建立进程与文件之间 的联系的？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "当一个进程打开一个文件时，核心是通过哪些数据结构来建立进程与文件之间 的联系的？"
+    },
+    {
+      "id": "第11章-11-1",
+      "chapter": 11,
+      "question_number": "11-1",
+      "content": "Linux系统中的设备驱动模型下支持哪些组件？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统中的设备驱动模型下支持哪些组件？"
+    },
+    {
+      "id": "第11章-11-2",
+      "chapter": 11,
+      "question_number": "11-2",
+      "content": "实现块设备操作涉及的系统组件有哪些？各自的作用是什么？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "实现块设备操作涉及的系统组件有哪些？各自的作用是什么？"
+    },
+    {
+      "id": "第11章-11-3",
+      "chapter": 11,
+      "question_number": "11-3",
+      "content": "Linux系统的设备缓存是如何实现的？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux系统的设备缓存是如何实现的？"
+    },
+    {
+      "id": "第11章-11-4",
+      "chapter": 11,
+      "question_number": "11-4",
+      "content": "通过列表命令，观察设备文件具有哪些属性？ 233 --- 第 244 页 --- ================================================================================",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "通过列表命令，观察设备文件具有哪些属性？ 233 --- 第 244 页 --- ================================================================================"
+    },
+    {
+      "id": "第12章-12-1",
+      "chapter": 12,
+      "question_number": "12-1",
+      "content": "中断与异常有什么相同点和不同点？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "中断与异常有什么相同点和不同点？"
+    },
+    {
+      "id": "第12章-12-2",
+      "chapter": 12,
+      "question_number": "12-2",
+      "content": "为什么中断处理时需要提高 CPU 的中断优先级，而异常处理时不需要改变 CPU 的中断优先级？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "为什么中断处理时需要提高 CPU 的中断优先级，而异常处理时不需要改变 CPU 的中断优先级？"
+    },
+    {
+      "id": "第12章-12-3",
+      "chapter": 12,
+      "question_number": "12-3",
+      "content": "Linux的信号机制有什么用途？ 243 --- 第 254 页 --- ================================================================================",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "Linux的信号机制有什么用途？ 243 --- 第 254 页 --- ================================================================================"
+    },
+    {
+      "id": "第13章-13-1",
+      "chapter": 13,
+      "question_number": "13-1",
+      "content": "UNIX系统为进程提供几种通信机制？各用于什么场合？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "UNIX系统为进程提供几种通信机制？各用于什么场合？"
+    },
+    {
+      "id": "第13章-13-2",
+      "chapter": 13,
+      "question_number": "13-2",
+      "content": "UNIX 系统提供的管道通信有几种？各是如何使用的？父子进程之间能否使用有 名管道进行通信？如何实现？",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "UNIX 系统提供的管道通信有几种？各是如何使用的？父子进程之间能否使用有 名管道进行通信？如何实现？"
+    },
+    {
+      "id": "第13章-13-3",
+      "chapter": 13,
+      "question_number": "13-3",
+      "content": "编程实现进程之间通过有名管道的通信。设有两个客户进程和一个服务器进 程。服务器进程负责打印，客户进程向服务器进程传递要打印的参数。参数可以是字符串或 字符串指针。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "编程实现进程之间通过有名管道的通信。设有两个客户进程和一个服务器进 程。服务器进程负责打印，客户进程向服务器进程传递要打印的参数。参数可以是字符串或 字符串指针。"
+    },
+    {
+      "id": "第13章-13-4",
+      "chapter": 13,
+      "question_number": "13-4",
+      "content": "考虑一个用信号量集合实现进程对系统多种资源的请求的例子。",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "考虑一个用信号量集合实现进程对系统多种资源的请求的例子。"
+    },
+    {
+      "id": "第13章-13-5",
+      "chapter": 13,
+      "question_number": "13-5",
+      "content": "分别使用消息缓冲、管道机制来实现三个进程间的数据传递。第一个进程从文 件中读数据，并按字节进行 T 变换后传递给第二个进程。第二个进程对收到的数据按字节 进行 F 变换后传递给第三个进程。第三个进程将收到的数据写入文件。T 变换为加 l 后模 64。F变换为加3后模64。 263 --- 第 274 页 --- 第三篇 Windows 2000/XP 操作系统研究",
+      "has_images": false,
+      "matched_images": [],
+      "image_count": 0,
+      "content_with_images": "分别使用消息缓冲、管道机制来实现三个进程间的数据传递。第一个进程从文 件中读数据，并按字节进行 T 变换后传递给第二个进程。第二个进程对收到的数据按字节 进行 F 变换后传递给第三个进程。第三个进程将收到的数据写入文件。T 变换为加 l 后模 64。F变换为加3后模64。 263 --- 第 274 页 --- 第三篇 Windows 2000/XP 操作系统研究"
+    }
+  ]
+}

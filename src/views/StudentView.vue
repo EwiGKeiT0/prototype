@@ -38,6 +38,19 @@
           </div>
         </el-card>
 
+        <!-- 题库浏览 -->
+        <el-card class="question-bank-card clickable-card" :class="{ active: currentView === 'questionBank' }" shadow="never" @click="showQuestionBank">
+          <template #header>
+            <div class="nav-header">
+              <el-icon><Files /></el-icon>
+              <span>题库浏览</span>
+            </div>
+          </template>
+          <div class="question-bank-desc">
+            <p>查看所有章节的课后习题</p>
+          </div>
+        </el-card>
+
         <!-- 题目推荐 -->
         <el-card class="smart-recommend-card clickable-card" :class="{ active: currentView === 'smart' }" shadow="never" @click="currentView = 'smart'">
           <template #header>
@@ -185,6 +198,34 @@
             />
           </div>
         </div>
+
+        <!-- 题库浏览内容 -->
+        <div v-if="currentView === 'questionBank'" class="question-bank-content">
+          <div class="questions-header">
+            <h3>{{ questionBankMetadata.title || '题库浏览' }}</h3>
+            <div class="filter-controls">
+              <label for="chapter-select">选择章节: </label>
+              <el-select id="chapter-select" v-model="selectedChapter" placeholder="所有章节" clearable>
+                <el-option label="所有章节" value="all"></el-option>
+                <el-option
+                  v-for="chapter in questionBankChapters"
+                  :key="chapter"
+                  :label="`第 ${chapter} 章`"
+                  :value="chapter"
+                ></el-option>
+              </el-select>
+            </div>
+          </div>
+          <div class="questions-container">
+            <QuestionDisplay
+              v-for="question in filteredQuestionBankQuestions"
+              :key="question.id"
+              :question="question"
+            />
+            <el-empty v-if="!isQuestionBankLoaded" description="正在加载题库..."></el-empty>
+            <el-empty v-if="isQuestionBankLoaded && filteredQuestionBankQuestions.length === 0" description="该章节下没有题目"></el-empty>
+          </div>
+        </div>
       </el-main>
     </el-container>
   </div>
@@ -194,17 +235,27 @@
 import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { ElMessage } from 'element-plus';
-import { Refresh, MagicStick, Warning, CircleCheck, ChatDotRound, Collection, ArrowLeft } from '@element-plus/icons-vue';
+import { Refresh, MagicStick, Warning, CircleCheck, ChatDotRound, Collection, ArrowLeft, Files } from '@element-plus/icons-vue';
 import QuestionCard from '../components/QuestionCard.vue';
 import Chatbot from '../components/Chatbot.vue';
+import QuestionDisplay from '../components/QuestionDisplay.vue';
+import type { DbQuestion, QuestionBank, Metadata } from '@/types';
 
 const router = useRouter();
+
 
 // 响应式数据
 const recommendLoading = ref(false);
 const weakPointLoading = ref(false);
-const currentView = ref('chatbot'); // 'default', 'smart', 'weak', 'chatbot', 'textbook'
+const currentView = ref('chatbot'); // 'default', 'smart', 'weak', 'chatbot', 'textbook', 'questionBank'
 const selectedWeakPoint = ref<any>(null); // 当前选中的薄弱知识点
+
+// 题库数据
+const questionBankMetadata = ref<Partial<Metadata>>({});
+const questionBankQuestions = ref<DbQuestion[]>([]);
+const selectedChapter = ref('all');
+const isQuestionBankLoaded = ref(false);
+
 
 // 薄弱知识点数据
 const weakKnowledgePoints = ref([
@@ -306,11 +357,45 @@ const weakPointQuestions = computed(() => {
   return questions.value.filter(q => q.knowledgePoint === selectedWeakPoint.value.name);
 });
 
+// 题库相关计算属性
+const questionBankChapters = computed(() => {
+  const chapterSet = new Set(questionBankQuestions.value.map((q) => q.chapter));
+  return Array.from(chapterSet).sort((a, b) => a - b);
+});
+
+const filteredQuestionBankQuestions = computed(() => {
+  if (selectedChapter.value === 'all') {
+    return questionBankQuestions.value;
+  }
+  return questionBankQuestions.value.filter(
+    (q) => q.chapter.toString() === selectedChapter.value.toString()
+  );
+});
+
 const textbookUrl = ref('/textbook.pdf');
 
 const showTextbook = () => {
   textbookUrl.value = '/textbook.pdf';
   currentView.value = 'textbook';
+};
+
+const fetchQuestionBank = async () => {
+  if (isQuestionBankLoaded.value) return;
+  try {
+    const response = await fetch('/fixed_questions_database.json');
+    const data: QuestionBank = await response.json();
+    questionBankMetadata.value = data.metadata;
+    questionBankQuestions.value = data.questions;
+    isQuestionBankLoaded.value = true;
+  } catch (error) {
+    console.error('Error fetching question bank:', error);
+    ElMessage.error('题库加载失败');
+  }
+};
+
+const showQuestionBank = () => {
+  currentView.value = 'questionBank';
+  fetchQuestionBank();
 };
 
 const handleNavigate = (payload: { view: string; param?: string }) => {
@@ -418,13 +503,13 @@ onMounted(() => {
   padding: 20px 10px 20px 10px;
 }
 
-.smart-recommend-card, .weak-points-card, .chatbot-card, .textbook-card {
+.smart-recommend-card, .weak-points-card, .chatbot-card, .textbook-card, .question-bank-card {
   margin-bottom: 20px;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
-.smart-recommend-card.active, .weak-points-card.active, .chatbot-card.active, .textbook-card.active {
+.smart-recommend-card.active, .weak-points-card.active, .chatbot-card.active, .textbook-card.active, .question-bank-card.active {
   border-color: #409EFF;
   box-shadow: 0 4px 12px rgba(64, 158, 255, 0.15);
 }
@@ -436,7 +521,13 @@ onMounted(() => {
   font-weight: 600;
   color: #2c3e50;
 }
-
+.question-bank-desc {
+  padding: 16px;
+  margin: -16px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px;
+}
 .recommend-content {
   text-align: center;
   padding: 16px;
@@ -566,11 +657,22 @@ onMounted(() => {
 
 .filter-controls {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
 }
 
+.filter-controls label {
+  white-space: nowrap;
+}
+
+.filter-controls .el-select {
+  min-width: 150px;
+}
+
 .questions-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   max-height: calc(100vh - 140px);
   overflow-y: auto;
   padding-right: 8px;
