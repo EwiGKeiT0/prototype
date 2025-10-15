@@ -33,6 +33,8 @@ const MOCK_CHAT_API = {
           answer: `这是对“${data.userInput}”的模拟回答。`,
           documents: docs
         }
+
+        console.log('Mock backend response:', response)
         resolve(response)
       }, 1500)
     })
