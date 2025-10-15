@@ -1,6 +1,7 @@
 import { studentApi } from '../api/student'
+import { chatbotApi } from '../api/chatbot'
 import { auth } from './auth'
-import type { Question } from '../types'
+import type { Question, ChatRequest, ChatResponse } from '../types'
 
 // API调用辅助函数
 export const apiHelper = {
@@ -78,6 +79,23 @@ export const apiHelper = {
       return weakPoints
     } catch (error) {
       console.error('获取薄弱知识点失败:', error)
+      throw error
+    }
+  },
+
+  // 发送聊天消息
+  sendChatMessage: async (userInput: string, useRag: boolean): Promise<ChatResponse> => {
+    const user = auth.getUser()
+    if (!user) {
+      throw new Error('用户未登录')
+    }
+
+    try {
+      const requestData: ChatRequest = { userInput, useRag }
+      const response = await chatbotApi.getChatResponse(requestData)
+      return response
+    } catch (error) {
+      console.error('发送聊天消息失败:', error)
       throw error
     }
   }

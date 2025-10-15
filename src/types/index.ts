@@ -118,3 +118,24 @@ export interface QuestionBank {
   metadata: Metadata
   questions: DbQuestion[]
 }
+
+// Chatbot相关类型
+export interface ChatRequest {
+  userInput: string
+  useRag: boolean
+}
+
+export interface RetrievedDocument {
+  // 根据后端实际返回的文档结构定义
+  source: string // e.g., "ch1.pdf"
+  page: number
+  content: string
+  chapter?: number // 从source中提取的章节号
+  finalPage?: number // 在textbook.pdf中的最终页码
+}
+
+export interface ChatResponse {
+  thought: string
+  answer: string
+  documents: RetrievedDocument[]
+}

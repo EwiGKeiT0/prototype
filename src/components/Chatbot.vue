@@ -21,6 +21,11 @@
         </div>
       </div>
       <div class="input-area">
+        <el-form :inline="true" size="large" class="toolbar-form">
+          <el-form-item label="RAG" style="margin-bottom: 5px">
+            <el-switch v-model="isRagEnabled" inline-prompt active-text="开启" inactive-text="关闭" />
+          </el-form-item>
+        </el-form>
         <el-input
           v-model="userInput"
           placeholder="输入您的问题..."
@@ -54,15 +59,24 @@
 import { ref, nextTick } from 'vue';
 import { Promotion, ArrowRight, ArrowLeft } from '@element-plus/icons-vue';
 import PdfPreview from './PdfPreview.vue';
+import { apiHelper } from '../utils/api-helper';
+import type { RetrievedDocument } from '../types';
 
 const emit = defineEmits(['navigate']);
 
 const userInput = ref('');
-const messages = ref<{ role: 'user' | 'assistant'; content: string }[]>([]);
+const messages = ref<{ role: 'user' | 'assistant'; content: string; thought?: string; documents?: RetrievedDocument[] }[]>([]);
 const isTyping = ref(false);
 const messagesArea = ref<HTMLElement | null>(null);
 const previewData = ref<{ source: string; page: number } | null>(null);
 const isPreviewOpen = ref(false);
+const isRagEnabled = ref(true); // 默认开启RAG
+
+const CHAPTER_PAGE_MAP: Record<number, number> = {
+  1: 11, 2: 34, 3: 51, 4: 80, 5: 111, 6: 134, 7: 155, 
+  8: 173, 9: 195, 10: 209, 11: 227, 12: 244, 13: 254, 
+  14: 274, 15: 294, 16: 312
+};
 
 const parseMessage = (content: string) => {
   const parts = [];
@@ -89,7 +103,7 @@ const parseMessage = (content: string) => {
 
 const handleLinkClick = (targetView: string, targetParam?: string) => {
   if (targetView === 'textbook' && targetParam) {
-    previewData.value = { source: '/textbook.pdf', page: parseInt(targetParam, 10) };
+    previewData.value = { source: `/textbook.pdf`, page: parseInt(targetParam, 10) };
     isPreviewOpen.value = true; // 自动展开预览
   } else {
     emit('navigate', { view: targetView, param: targetParam });
@@ -114,7 +128,7 @@ const scrollToBottom = () => {
   });
 };
 
-const sendMessage = () => {
+const sendMessage = async () => {
   const text = userInput.value.trim();
   if (!text) return;
 
@@ -122,21 +136,56 @@ const sendMessage = () => {
   userInput.value = '';
   scrollToBottom();
   
-  // 如果预览是打开的，则关闭它
   if (isPreviewOpen.value) {
     isPreviewOpen.value = false;
   }
-  previewData.value = null; // 清除旧的预览
+  previewData.value = null;
 
   isTyping.value = true;
 
-  // 模拟后端LLM响应
-  setTimeout(() => {
+  try {
+    const response = await apiHelper.sendChatMessage(text, isRagEnabled.value);
+    
+    if (response.thought) {
+      console.log('AI Thought:', response.thought);
+    }
+
+    const processedDocuments = response.documents.map(doc => {
+      const match = doc.source.match(/ch(\d+)\.pdf/);
+      const chapter = match ? parseInt(match[1], 10) : undefined;
+      const basePage = chapter ? CHAPTER_PAGE_MAP[chapter] : 0;
+      const finalPage = basePage ? basePage + doc.page - 1 : doc.page;
+
+      return {
+        ...doc,
+        chapter: chapter,
+        finalPage: finalPage
+      };
+    });
+
+    messages.value.push({
+      role: 'assistant',
+      content: response.answer,
+      thought: response.thought,
+      documents: processedDocuments
+    });
+
+    if (processedDocuments && processedDocuments.length > 0) {
+      const firstDoc = processedDocuments[0];
+      previewData.value = { source: `/textbook.pdf`, page: firstDoc.finalPage };
+      // isPreviewOpen.value = true; 
+    }
+
+  } catch (error) {
+    console.error('Error sending message:', error);
+    messages.value.push({
+      role: 'assistant',
+      content: '抱歉，处理您的请求时发生错误。'
+    });
+  } finally {
     isTyping.value = false;
-    const botResponse = `这是对“${text}”的模拟回答。您可以 [123](textbook:5) 以获取更多信息。`;
-    messages.value.push({ role: 'assistant', content: botResponse });
     scrollToBottom();
-  }, 1500);
+  }
 };
 </script>
 
@@ -255,6 +304,7 @@ const sendMessage = () => {
   border-radius: 18px;
   line-height: 1.6;
   font-size: 14px;
+  text-align: left;
 }
 
 .message.user .text-bubble {
@@ -281,9 +331,14 @@ const sendMessage = () => {
 }
 
 .input-area {
-  padding: 20px;
+  padding: 10px 20px 20px;
   border-top: 1px solid #e4e7ed;
   background-color: #ffffff;
+}
+
+.toolbar-form {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .typing-indicator span {
