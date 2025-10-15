@@ -1,7 +1,7 @@
 <template>
   <div class="question-card" @click="toggleAnswerInput">
     <div class="question-header">
-      <span class="question-type-tag">第 {{ question.chapter }} 章</span>
+      <span class="question-type-tag" :style="chapterStyle">第 {{ question.chapter }} 章</span>
       <span class="question-knowledge-point">题号: {{ question.question_number }}</span>
     </div>
     <div class="question-body">
@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { DbQuestion } from '@/types'
 import { ElMessage } from 'element-plus'
 import type { UploadUserFile } from 'element-plus'
@@ -51,6 +51,32 @@ import type { UploadUserFile } from 'element-plus'
 const props = defineProps<{
   question: DbQuestion
 }>()
+
+const chapterStyle = computed(() => {
+  const chapter = props.question.chapter
+  // 预定义一些颜色组合
+  const colors = [
+    { bg: '#f0f9eb', text: '#67c23a' }, // 1. Green
+    { bg: '#ecf5ff', text: '#409eff' }, // 2. Blue
+    { bg: '#fdf6ec', text: '#e6a23c' }, // 3. Orange
+    { bg: '#fef0f0', text: '#f56c6c' }, // 4. Red
+    { bg: '#f3e8fd', text: '#9b59b6' }, // 5. Purple
+    { bg: '#e1f3f8', text: '#00a1d6' }, // 6. Cyan
+    { bg: '#fffbe6', text: '#d4b106' }, // 7. Yellow
+    { bg: '#e0f2f1', text: '#009688' }, // 8. Teal
+    { bg: '#fff0e6', text: '#fa541c' }, // 9. Bright Orange
+    { bg: '#fce4ec', text: '#e91e63' }, // 10. Pink
+    { bg: '#e6f7ff', text: '#1890ff' }, // 11. Bright Blue
+    { bg: '#e8eaf6', text: '#3f51b5' }, // 12. Indigo
+    { bg: '#efebe9', text: '#795548' }  // 13. Brown
+  ]
+  // 使用章节号来选择颜色，如果章节号超过颜色数组长度，则循环使用
+  const color = colors[(chapter - 1) % colors.length]
+  return {
+    backgroundColor: color.bg,
+    color: color.text
+  }
+})
 
 const isAnswerVisible = ref(false)
 const answerText = ref('')
@@ -113,8 +139,6 @@ const submitAnswer = async () => {
 }
 
 .question-type-tag {
-  background-color: #f0f9eb;
-  color: #67c23a;
   padding: 4px 10px;
   border-radius: 6px;
   font-size: 12px;
@@ -124,10 +148,6 @@ const submitAnswer = async () => {
 .question-knowledge-point {
   color: #909399;
   font-size: 13px;
-}
-
-.question-body {
-  /* Clicks on body should not be stopped */
 }
 
 .question-title {

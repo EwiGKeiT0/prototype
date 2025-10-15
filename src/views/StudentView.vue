@@ -382,7 +382,7 @@ const showTextbook = () => {
 const fetchQuestionBank = async () => {
   if (isQuestionBankLoaded.value) return;
   try {
-    const response = await fetch('/fixed_questions_database.json');
+    const response = await fetch('/final_questions.json');
     const data: QuestionBank = await response.json();
     questionBankMetadata.value = data.metadata;
     questionBankQuestions.value = data.questions;
