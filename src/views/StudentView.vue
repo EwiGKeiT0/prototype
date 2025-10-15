@@ -216,7 +216,7 @@
               </el-select>
             </div>
           </div>
-          <div class="questions-container">
+          <div class="question-bank-grid">
             <QuestionDisplay
               v-for="question in filteredQuestionBankQuestions"
               :key="question.id"
@@ -671,11 +671,19 @@ onMounted(() => {
 
 .questions-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   gap: 20px;
   max-height: calc(100vh - 140px);
   overflow-y: auto;
   padding-right: 8px;
+}
+
+.question-bank-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 20px;
+  padding-right: 8px;
+  overflow-x: hidden;
 }
 
 .chatbot-content {

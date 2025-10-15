@@ -133,7 +133,7 @@ const sendMessage = () => {
   // 模拟后端LLM响应
   setTimeout(() => {
     isTyping.value = false;
-    const botResponse = `这是对“${text}”的模拟回答。您可以 [点击这里查看教材第5页](textbook:5) 以获取更多信息。`;
+    const botResponse = `这是对“${text}”的模拟回答。您可以 [123](textbook:5) 以获取更多信息。`;
     messages.value.push({ role: 'assistant', content: botResponse });
     scrollToBottom();
   }, 1500);
